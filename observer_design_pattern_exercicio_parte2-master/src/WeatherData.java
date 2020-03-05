@@ -4,7 +4,6 @@ import java.util.Random;
 
 
 public class WeatherData implements Subject{
-	private MediaDisplay MD = new MediaDisplay();
 	private List <Observer> observers = new LinkedList <> ();
 	private double temperature, humidity, pressure;
 	private Random gerador = new Random ();
@@ -47,29 +46,20 @@ public class WeatherData implements Subject{
 	
 	public void setMeasurements () {
 		this.temperature = 20 + gerador.nextDouble() * 5;
-		MD.registerTemperature(this.temperature);
 		this.humidity = 0.6 + gerador.nextDouble() * 0.1;
 		this.pressure = 600 + gerador.nextDouble() * 400;
 		this.measurementsChanged();
 	}
 
 	public void iniciar(){
-		int cont = 0;
 		while (true) {
-			cont++;
-			if(cont ==11) {
-				MD.media();
-				MD.mostrarTemperatura();
-				cont=0;
-			}
 			setMeasurements();
-			
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				
-				throw new RuntimeException (e);				
+				throw new RuntimeException (e);
 			}
 		}
+		
 	}
 }
