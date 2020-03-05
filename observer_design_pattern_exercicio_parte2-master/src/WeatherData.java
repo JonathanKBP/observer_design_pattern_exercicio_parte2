@@ -55,7 +55,7 @@ public class WeatherData implements Subject{
 		while (true) {
 			setMeasurements();
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				throw new RuntimeException (e);
 			}

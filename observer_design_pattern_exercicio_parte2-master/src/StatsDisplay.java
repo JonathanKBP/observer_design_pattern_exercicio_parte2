@@ -10,7 +10,7 @@ private List <Double> temps = new ArrayList <> ();
 	}
 	@Override
 	public void display(double t, double h, double p) {
-		System.out.printf("Média: %.2f\n", calculaMedia());
+		System.out.printf("Media: %.2f\n", calculaMedia());
 	}
 	
 	private double calculaMedia () {

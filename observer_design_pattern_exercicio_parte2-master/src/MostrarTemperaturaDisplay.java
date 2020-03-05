@@ -13,14 +13,16 @@ public class MostrarTemperaturaDisplay implements Observer, DisplayElement{
 
 	@Override
 	public void update(double temp, double humidity, double pressure) {		
-		if(cont==10) {
+		//temps.clear();
+		if(cont>=10) {
 			display(temp, humidity, pressure);
-			cont=0;	
-			temps.clear();
+			temps.remove(0);
 		}	
 		temps.add(temp);
+		
 		cont++;
 	}
+
 
 	public void mostrarTemperatura() {
 		System.out.println("As dez ultimas temperaturas registradas: ");

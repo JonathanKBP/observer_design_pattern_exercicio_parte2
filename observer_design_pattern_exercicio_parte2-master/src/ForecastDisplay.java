@@ -9,7 +9,7 @@ public class ForecastDisplay implements Observer, DisplayElement {
 	
 	@Override
 	public void display(double t, double h, double p) {
-		System.out.printf("Previsão: %.2f\n", (t - 2) + gerador.nextDouble() * 4);
+		System.out.printf("Previsao: %.2f\n", (t - 2) + gerador.nextDouble() * 4);
 		
 	}
 }
